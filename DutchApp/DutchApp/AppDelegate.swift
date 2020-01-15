@@ -12,11 +12,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+<<<<<<< HEAD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = AllChargeViewController()
         window?.makeKeyAndVisible()
+=======
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Override point for customization after application launch.
+        if #available(iOS 13, *) {
+            print("secene")
+        } else {
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.backgroundColor = .systemBackground
+            
+            let tabBar = UITabBarController()
+            let navi = UINavigationController(rootViewController: DutchViewController())
+            tabBar.viewControllers = [navi]
+            
+            self.window = window
+            window.rootViewController = tabBar
+            window.makeKeyAndVisible()
+
+        }
+        
+>>>>>>> 510715a29984cc8b8dfb4c68b79410084155ccd9
         return true
     }
 
